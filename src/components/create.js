@@ -1,4 +1,6 @@
 import { useState } from "react";//usestate import.
+import axios from "axios";
+
 
 function Create() {
 
@@ -11,7 +13,17 @@ function Create() {
 
       console.log("Title: "+title + 
       "Cover: "+cover + 
-      "Author: "+author)//logs title,cover,author to console.
+      "Author: "+author);//logs title,cover,author to console.
+
+      const book = ({
+        title:title,
+        cover:cover,
+        author:author
+      });
+
+      axios.post("http://localhost:4000/api/book",book)
+      .then()
+      .catch();
     }
     
     return (
@@ -46,7 +58,7 @@ function Create() {
                 </div>
 
                 <div>
-                    <input type= "submit" value = "Add Book!"></input>
+                    <input type="submit" value ="Add Book"></input>
                 </div>
 
             </form>

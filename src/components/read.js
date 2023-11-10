@@ -10,10 +10,10 @@ function Read(){
 
     useEffect(//reacthook, sync with external system.
      ()=>{
-    axios.get('https://jsonblob.com/api/jsonblob/1161593332966481920')//axios imported, getting api request, axios is a promised based http client.
+    axios.get('http://localhost:4000/api/books')//axios imported, getting api request, axios is a promised based http client. //replaced jsonblob with localhost - http request being made with axios
     .then(
         (response)=>{//calling the response.
-         setData(response.data.books);//setdata = response.data.books, only pulling part of the data with .books
+         setData(response.data.myBooks);//setdata = response.data.books, only pulling part of the data with .books - change to myBooks
         }//call back function
     )
     .catch(
