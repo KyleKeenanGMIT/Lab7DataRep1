@@ -60,8 +60,12 @@ app.get('/', (req, res) => {//Server sits and listens for request - / call back 
 app.get('/api/books', async (req, res) =>{
     //removed hard coded array.
     let books = await bookModel.find({}); //books = everything that comes from db.
-    res.json(books)//response. - when going to localhost:4000/api/books will return all the books in my mongo db. 
+    res.json(books)//response. - when going to localhost:4000/api/books will return all the books in my mongo db.
         
+    })
+
+    app.get('/api/book/:id', (req,res)=>{
+      console.log(req.params.id);
     })
 
  //server listens for a http request using a get method.
