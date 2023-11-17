@@ -29,7 +29,7 @@ function Create() {
     return (
         <div>
             <h2>Hello from my create component</h2>
-            <form submit = {handleSubmit}> {/*form import, from lab docs, box allowing me to input data for title, cover & author.*/}
+            <form onSubmit={handleSubmit}> 
                 <div className="form-group">
                     <label>Edit Book Title: </label>
                     <input type="text"

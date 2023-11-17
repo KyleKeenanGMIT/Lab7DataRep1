@@ -13,7 +13,7 @@ function Read(){
     axios.get('http://localhost:4000/api/books')//axios imported, getting api request, axios is a promised based http client. //replaced jsonblob with localhost - http request being made with axios
     .then(
         (response)=>{//calling the response.
-         setData(response.data.myBooks);//setdata = response.data.books, only pulling part of the data with .books - change to myBooks
+         setData(response.data);//setdata = response.data.books, only pulling part of the data with .books - change to myBooks - mybooks now removed, array has no name thats being pulled from mongo db
         }//call back function
     )
     .catch(

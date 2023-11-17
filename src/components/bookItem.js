@@ -7,8 +7,8 @@ function BookItem(props){
              <Card> {/* card added from react */}
       <Card.Header>{props.myBook.title}</Card.Header>
       <Card.Body>
-      <img src={props.myBook.thumbnailUrl}></img>
-      <p>{props.myBook.authors[0]}</p>
+      <img src={props.myBook.cover}></img>
+      <p>{props.myBook.author}</p>
         
       </Card.Body>
     </Card>
