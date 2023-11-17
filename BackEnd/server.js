@@ -47,7 +47,7 @@ bookModel.create({
   title:req.body.title,
   cover:req.body.cover,
   author:req.body.author
-})
+})//creates new book, title, cover & author. - will be shown in the database.
 .then(() =>{res.send("Book Created")})
 .catch(() =>{res.send("Book Not Created")})
 
@@ -64,11 +64,13 @@ app.get('/api/books', async (req, res) =>{
         
     })
 
-    app.get('/api/book/:id', (req,res)=>{
+    app.get('/api/book/:id',async (req, res)=>{
       console.log(req.params.id);
+    book = await bookModel.findById({_id:req.params.id})
+    res.send(book);//can query the db to find a certain book by ID.
     })
 
- //server listens for a http request using a get method.
+ 
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`) //node server.js in terminal will give this response.
