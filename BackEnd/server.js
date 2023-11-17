@@ -21,7 +21,7 @@ app.use(bodyParser.json());//body parser installed using the cmd line npm instal
 
 app.post('/api/book',(req,res) =>{
 console.log(req.body);
-res.send('data received');//response
+res.send('data received');//response added.
 })
 
 app.get('/', (req, res) => {//Server sits and listens for request - / call back function.
